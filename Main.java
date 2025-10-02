@@ -6,27 +6,37 @@ public class Main
     {
         // You can optionally use the Scanner for user input
         Scanner scan = new Scanner(System.in);
-        
-        int numOfNums;
-        System.out.println("How many random numbers do you want to see (must be at least 1)?");
-        numOfNums = scan.nextInt();
-        printRandom(numOfNums);
+        int N;
+        System.out.println("Enter a positive number");
+        N = scan.nextInt();
+        printRandom3(N);
+        double c = calcSlope(4, 3, 2, 1);
+        System.out.println(c);
+        System.out.println(calcSlope(0,0,1,1));
     }
     
-    public static void printRandom3(int num)
+    public static void printRandom3(int N)
     {
         // Do problem 1 here
+        // (int) (Math.random() * (b-a+1) + a);
+        int lowerBound = 2;
+        int upperBound = N + 2;
+        System.out.println( (int) (Math.random () * (upperBound - lowerBound + 1) + lowerBound) );
+        System.out.println( (int) (Math.random () * (upperBound - lowerBound + 1) + lowerBound) );
+        System.out.println( (int) (Math.random () * (upperBound - lowerBound + 1) + lowerBound) );
     }
     
-    public static double calcSlope(double x1, double x2, double y1, double y2)
+    public static double calcSlope(double x1, double y1, double x2, double y2)
     {
         // Do problem 2 here; replace code below
-        return 0.0;
+        double Slope =(double)(y2 - y1) / (x2 - x1);
+        return Slope;
     }
     
     public static int roundedDist(double a, double b)
     {
-        // Do problem 3 here; replace code below
-        return 0;
+        int distance = (int)(b - a);
+        distance = Math.abs(distance);
+        return distance;    
     }
 }
